@@ -83,20 +83,18 @@
         // ==================================
 
         const players = document.getElementById("players");
-        const ulList = document.getElementById("list");
-
-        console.log(server.players);
+        const list = document.getElementById("list");
 
         if(server.players?.online) {
             for(const { name } of server.players.sample)
-                ulList.innerHTML += `
+                list.innerHTML += `
                     <li class="player">
                         <img src="https://minotar.net/avatar/${name}" class="avatar">
                         ${name}
                     </li>
                 `;
 
-            players.addEventListener("click", () => ulList.style.display = !ulList.style.display || ulList.style.display === "none" ? "block" : "none");
+            players.addEventListener("click", () => list.style.display = !list.style.display || list.style.display === "none" ? "block" : "none");
 
             players.className += " a";
         } else
